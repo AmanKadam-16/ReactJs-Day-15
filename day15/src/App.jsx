@@ -1,22 +1,44 @@
+// import { Link, useNavigate } from "react-router-dom";
+
+
+// const App = () =>{
+// // useNavigate hook for routing through pages | components
+//   const navigate = useNavigate();
+
+//   function clickAbout(){
+//     navigate('/about')
+//   }
+
+//   return(
+//     <>
+//     <h2>Home</h2>
+//     <h3>This is home page.</h3>
+//     {/* <h2 onClick={clickAbout} style={{ cursor:'pointer' }} >about</h2> */}
+//     <Link to='/about' >About</Link>
+//     </>
+//   )
+// }
+
+// export default App;
+import './App.css'
+
 import { useState } from "react";
-
-
+const style = {color:'grey', fontWeight:'600'}  //object  | Internal CSS
 const App = () =>{
 
-  const [mode, setMode] = useState('white');
+  // let x = 1;
+  const [count, setNumber] = useState(0)  // 1,2,3,4
 
-  function modes(){
-    setMode('black')
+  function increment(){
+    setNumber(count+1)
   }
 
   return(
     <>
-    <button onClick={modes}>change mode</button>
-    <h1>Current mode selected - {mode}</h1>
+    
+   <h1 className='heading1'>{count}</h1> 
 
-    <div style={{height:'200px', width:'250px'}}>
-
-    </div>
+   <button onClick={increment}>increment</button>
     </>
   )
 }
